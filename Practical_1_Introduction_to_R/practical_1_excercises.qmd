@@ -2,6 +2,11 @@
 title: "Practical 1 Excercises"
 author: "Ilyas"
 ---
+*Downloading tidyverse*
+```{r}
+library(tidyverse)
+library(gt)
+```
 
 ```{r}
 roundedNum = round(3.14159, digits = 2)
@@ -19,4 +24,42 @@ myLogic = FALSE
 print(paste(myNum,", ", myChar,", ", myLogic))
 print(paste(class(myNum), class(myChar), class(myLogic)))
 ```
+Vector introduction:
+```{r}
+#Creating variables
+numOne = 5415
+numTwo = 8123
+numThree = 1234
+jointVector = c(numOne, numTwo, numThree)
 
+#Printing vectors
+print(jointVector)
+print(paste("This is the 2nd number in my vector:", jointVector[3]))
+
+#More vectors :|
+allMyPets = c("dog", "horse", "guinea pig", "chicken", "cat")
+allMyPets[1] = "chinchilla"
+
+for(item in allMyPets)
+{
+  print(item)
+}
+```
+
+Data frames introduction:
+```{r}
+myDataFrame = tibble(
+  fruit = c("apple", "pear", "banana"),
+  length = c(22, 30, 55),
+  weight = c(150, 165, 170)
+)
+
+print(myDataFrame)
+gt(myDataFrame)
+```
+
+Weather CSV Task:
+```{r}
+weather = read_csv("data/weather_data.csv")
+gt(weather)
+```
