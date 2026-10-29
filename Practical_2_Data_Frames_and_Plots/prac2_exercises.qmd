@@ -1,0 +1,15 @@
+---
+title: "Practical_2_Data_Frames_and_Plots/prac2_exercises"
+---
+
+```{r}
+
+y = 9
+
+print(y == 7)
+print(y < 13)
+print(y > 9)
+print(y < 12 || y == 12)
+
+```
+

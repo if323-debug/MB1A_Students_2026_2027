@@ -1,0 +1,61 @@
+---
+title: "Practical_2_Data_Frames_and_Plots/worked_example"
+---
+```{r}
+library(gt)
+library(tidyverse)
+library(maps)
+```
+##1st ccv
+```{r}
+breedSiteLocations = read_csv("data/breeding_site_locations.csv")
+gt(breedSiteLocations)
+colnames(breedSiteLocations)
+glimpse(breedSiteLocations)
+
+selectedSites = breedSiteLocations |> select(Site, Longitude, Latitude) |> distinct()
+gt(selectedSites)
+
+```
+##2nd csv
+```{r}
+migrationSites = read_csv("data/migratory_connectivity_dataset.csv")
+gt(head(migrationSites))
+
+```
+##pipe symbol practice
+```{r}
+myNums = c(2, 4, 6, 8)
+print(sum(myNums))
+
+myNums |> sum()
+print(myNums |> sum() |> sqrt() |> round())
+
+```
+##copied code chunk
+```{r}
+bird_breeding_selected = breedSiteLocations |>
+  select(Site, Longitude, Latitude) |>
+  distinct() |>
+  rename(Breeding_Longitude = Longitude, Breeding_Latitude = Latitude)
+
+migrationSiteSelected = migrationSites |> 
+  select(Site, winterLongitude, winterLatitude, pslon, pslat, iblon, iblat, awestlon, awestlat) |>
+  distinct() |>
+  rename(
+    Winter_Longitude = winterLongitude,
+    Winter_Latitude = winterLatitude,
+    Stopover_Longitude = pslon,
+    Stopover_Latitude = pslat,
+    Iberian_Longitude = iblon,
+    Iberian_Latitude = iblat,
+    Westmost_Longitude = awestlon,
+    Westmost_Latitude = awestlat)
+
+birdSiteEdited = bird_breeding_selected |> filter(Site != "Spain")
+migrationSiteEdited = migrationSiteSelected |> filter(Site != "Spain")
+
+gt(bird_breeding_selected)
+gt(birdSiteEdited)
+
+```
