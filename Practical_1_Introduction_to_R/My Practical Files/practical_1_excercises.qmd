@@ -1,0 +1,22 @@
+---
+title: "Practical 1 Excercises"
+author: "Ilyas"
+---
+
+```{r}
+roundedNum = round(3.14159, digits = 2)
+print(roundedNum)
+```
+```{r}
+print(rep(5, 7))
+print(rep(times = 2, x = 3))
+```
+```{r}
+myNum = 12
+myChar = "Hello world"
+myLogic = FALSE
+
+print(paste(myNum,", ", myChar,", ", myLogic))
+print(paste(class(myNum), class(myChar), class(myLogic)))
+```
+

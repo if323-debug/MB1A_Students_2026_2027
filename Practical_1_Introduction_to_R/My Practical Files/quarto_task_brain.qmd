@@ -1,0 +1,20 @@
+---
+title: "Brain Task"
+author: "Ilyas"
+---
+
+Total number of genes with regionally elevated expression in the forebrain for a **human**
+```{r}
+totalRegElevGenesHuman = sum(180, 83, 57, 110)
+print(totalRegElevGenesHuman)
+```
+Total number of genes with regionally elevated expression in the forebrain for a **pig**
+```{r}
+totalRegElevGenesPig = sum(109, 157, 31, 45)
+print(totalRegElevGenesPig)
+```
+Total number of genes with regionally elevated expression in the forebrain for a **mouse**
+```{r}
+totalRegElevGenesMouse = sum(55, 185, 60, 98)
+print(totalRegElevGenesMouse)
+```
